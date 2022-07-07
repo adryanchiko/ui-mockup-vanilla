@@ -1,6 +1,11 @@
 var isProfilEmbed = 1;
 
-const names = ["Justin", "Kakak", "Ibuk", "Echo", "Chika"];
+var contacts = [
+    {
+        name: "justin",
+        unread: 10
+    }
+]
 
 var chatArr = [
     {
@@ -24,44 +29,112 @@ var chatArr = [
             },
             {
                 by:0,
-                type:'sticker'
+                type:'sticker',
+                value:'4'
+            }
+        ]
+    },
+    {
+        name:"Kakak",
+        messages:
+        [
+            {
+                by:0,
+                type:'txt',
+                value:'Test',
+            },
+            {
+                by:1,
+                type:'txt',
+                value:'masuk'
+            },
+            {
+                by:0,
+                type:'txt',
+                value:'Oke',
+            },
+            {
+                by:0,
+                type:'sticker',
+                value:'3'
+            }
+        ]
+    },
+    {
+        name:"Mama",
+        messages:
+        [
+            {
+                by:0,
+                type:'txt',
+                value:'Maaa'
+            },
+            {
+                by:1,
+                type:'txt',
+                value:'Apa ndy?'
+            },
+            {
+                by:0,
+                type:'txt',
+                value:'Air e mati'
+            },
+            {
+                by:0,
+                type:'txt',
+                value:'Ada bocor di Ranugrati'
+            },
+            {
+                by:1,
+                type:'txt',
+                value:'Minta o orang depan, mereka pake sumur bor'
+            }
+        ]
+    },
+    {
+        name:'Echo',
+        messages:
+        [
+            {
+                by:0,
+                type:'sticker',
+                value:'1'
+            },
+            {
+                by:0,
+                type:'url',
+                value:'https://www.w3schools.com/jsref/met_node_appendchild.asp'
+            },
+            {
+                by:0,
+                type:'txt',
+                value:'test123'
+            }
+        ]
+    },
+    {
+        name:'Lala',
+        messages:
+        [
+            {
+                by:1,
+                type:'txt',
+                value:'Weh'
+            },
+            {
+                by:1,
+                type:'txt',
+                value:'Sibuk a?'
+            },
+            {
+                by:0,
+                type:'txt',
+                value:'Hooh'
             }
         ]
     }
 ]
 
-/* var chatArr = [
-    ["Justin",
-        [1, "P"],
-        [0, "Whut"],
-        [1, "Gk jadi"],
-        [0, 1, 4]
-    ],
-    ["Kakak",
-        [0, "Test"],
-        [1, "Masuk"],
-        [0, "Oke"],
-        [0, 1, 3]
-    ],
-    ["Ibuk",
-        [0, "Maa"],
-        [1, "Apa ndy?"],
-        [0, "Air e mati"],
-        [0, "Ada bocor di ranugrati"],
-        [1, "Minta o orang depan, mereka pake sumur bor"]
-    ],
-    ["Echo",
-        [0, 1, 1],
-        [0, 2, "https://www.w3schools.com/jsref/met_node_appendchild.asp"],
-        [0, "Test123"]
-    ],
-    ["Chika",
-        [1, "Weh"],
-        [1, "Sibuk a?"],
-        [0, "Yoi"]
-    ]
-]
- */
 function showChat(num) {
     const chatArea = document.getElementById("chat");
     chatArea.innerHTML = '';
