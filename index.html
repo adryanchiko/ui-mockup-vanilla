@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UI MockUp</title>
+    <link href="assets/styles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="separator">
+        <div id="sidepane">
+            <div class="profile">
+                <img src="assets/images/icons/You.jpg" alt="your-photo">
+                <span class="profile-text">Hiyorrun</span>
+            </div>
+            <div id="chatlist">
+                <ol id="list" class="list">
+                    <div id="search-area">
+                        <div class="input-container">
+                            <input type="text" class="input-area" placeholder="Search or start a new chat.">
+                        </div>
+                    </div>
+                    <!-- Contoh template autogenerate e -->
+                    <!-- <div class="profile chats" onclick="showChat(0)"><img src="assets/images/icons/Justin.jpg"
+                            alt="Justin-photo">
+                        <div class="chat-preview"><span class="profile-text">Justin</span><span
+                                class="preview-text">Justin</span></div><span class="timestamp">12.45</span>
+                    </div> -->
+                </ol>
+            </div>
+        </div>
+        <div id="main-area">
+            <div class="profile">
+                <span id="chatterid" class="profile-text">TestUser1</span>
+            </div>
+            <div id="chat-area">
+                <ol id="chat" class="list">
+                    <div class="chat lalign withprof"><img class="chatprofimg" src="assets/images/icons/Justin.jpg" alt="Justin-photo"><span class="they">AAAAA</span></div>
+                    <div class="chat lalign chatonly"><img class="sticker" src="assets/images/stickers/4.webp"></div>
+                    <div class="chat lalign chatonly"><span class="they">AAAAA</span></div>
+                    <div class="chat lalign chatonly"><span class="they">AAAAA</span></div>
+                    <div class="chat ralign"><img class="sticker" src="assets/images/stickers/3.webp"></div>
+                    <div class="chat ralign"><span class="you"><a href="https://github.com">https://github.com</a></span></div>
+                    <div class="chat ralign"><span class="you">AAAAA</span></div>
+                    <div class="chat lalign withprof"><img class="chatprofimg" src="assets/images/icons/Justin.jpg" alt="Justin-photo"><span class="they">AAAAA</span></div>
+                </ol>
+            </div>
+            <div id="input-parent">
+                <div class="input-container">
+                    <input type="text" class="input-area" placeholder="Type a message">
+                    <button class="input-area-btn"></button>
+                    <button class="input-area-btn"></button>
+                    <button class="input-area-btn"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/scripts/scripts.js"></script>
+</body>
+
+</html>
