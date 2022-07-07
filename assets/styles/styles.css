@@ -1,151 +1,209 @@
+:root {
+    --accent100: hsl(0, 0%, 90%);
+    --accent200: hsl(0, 0%, 60%);
+    --accent300: hsl(0, 1%, 30%);
+    --alpha: #00000000;
+}
+
+.alpha {
+    background-color: var(--alpha);
+}
+
+.bg-light {
+    background-color: var(--accent100);
+}
+
+.bg-light,
+.light {
+    color: var(--accent300);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-white,
+.white {
+    color: var(--accent300)
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.black {
+    color: black;
+}
+
+.bg-dark {
+    background-color: var(--accent300);
+}
+
+.bg-dark,
+.dark {
+    color: var(--accent100);
+}
+
 body {
     margin: 0;
-    height:100vh;
+    height: 100vh;
 }
 
 #separator {
     display: flex;
-    height:100%;
+    height: 100%;
 }
 
-#main-area{
-    display:flex;
-    flex-direction:column;
-    border-left: rgb(214, 214, 214) solid 1px;
-    flex:60%;
-}
-
-#chat-area{
-    flex-grow:4;
-    padding:0 1em;
-}
-
-#input-parent{
-    padding:1em;
-}
-
-#sidepane{
-    flex:40%;
-}
-
-#list{
-    padding:0 1em 1em 1em;
-    margin:0;
-}
-
-#chat{
-    padding:0;
-}
-
-.input-container{
-    display:flex;
-    width:100%;
-    height:2em;
-    background-color:rgb(214, 214, 214);
-    border-radius:1.5em;
-    border:none;
-}
-
-.input-area{
-    height:100%;
-    background-color:rgba(214, 214, 214,0);
-    border:none;
-    padding:0 0 0 1em;
-    flex-grow:4;
-}
-
-.input-area:focus{
-    outline:none;
-}
-
-.input-area-btn{
-    width:2em;
-    height:2em;
-    background-color: white;
-    border-radius:1.5em;
-    border:none;
-    margin:.2em .3em .2em 0;
-}
-
-.profile{
-    display:flex;
-    align-items:center;
-    padding:1em;
-}
-
-.profile img{
-    height:2em;
-    border-radius:50%;
-    margin-right:1em;
-}
-
-.chats{
-    border-radius:2em;
-    transition:.3s;
-    margin-top:.5em;
-}
-
-.chats:hover{
-    background-color: rgb(214, 214, 214);
-}
-
-.chat-preview{
+#main-area {
     display: flex;
     flex-direction: column;
-    font-size:1em;
-    flex-grow:4;
+    border-left: var(--accent100) solid 1px;
+    flex: 60%;
 }
 
-.preview-text{
-    color:grey;
-    font-size:.8em;
+#chat-area {
+    flex-grow: 4;
+    padding: 0 1em;
+    overflow-y: auto;
 }
 
-.timestamp{
-    color:grey;
-    font-size:.8em;
+#search-area {
+    margin: 0 1em;
 }
 
-.chat{
-    margin-top:.9em;
+#input-parent {
+    padding: 1em;
+}
+
+#sidepane {
+    flex: 40%;
+}
+
+#list {
+    padding: 0 1em 1em 1em;
+    margin: 0;
+}
+
+#chat {
+    padding: 0;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+}
+
+.input-area {
+    height: 100%;
+    border: none;
+    padding: 0 0 0 1em;
+    flex-grow: 4;
+}
+
+.input-area:focus {
+    outline: none;
+}
+
+.input-area-btn {
+    width: 2em;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    margin: .2em .3em .2em 0;
+    display: flex;
+    align-items: center;
+}
+
+.input-area-btn .material-symbols-rounded {
+    font-size: 1.4em;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.profile img {
+    height: 2em;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.chats {
+    border-radius: 2em;
+    transition: .3s;
+    margin-top: .5em;
+    font-size: 1em;
+}
+
+.chats:hover {
+    background-color: var(--accent100);
+}
+
+.chat-preview {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    flex-grow: 4;
+}
+
+.preview-text {
+    color: var(--accent300);
+    font-size: .8em;
+}
+
+.timestamp {
+    color: var(--accent300);
+    font-size: .8em;
+}
+
+.chat {
+    margin-top: .9em;
 }
 
 .withprof {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 .chatprofimg {
-    height:2em;
-    border-radius:50%;
-    margin-right:1em;
+    height: 2em;
+    border-radius: 50%;
+    margin-right: 1em;
 }
 
-.they{
-    border-radius:1.5em;
-    padding:.5em;
-    background-color:rgb(214, 214, 214);
+.they {
+    border-radius: .4em 1.5em 1.5em 1.5em;
+    padding: .5em;
 }
 
-.lalign{
-    text-align:left;
+.lalign {
+    text-align: left;
 }
 
-.chatonly{
-    padding-left:3em;
+.chatonly {
+    padding-left: 3em;
 }
 
-.you{
-    border-radius:1.5em;
-    padding:.5em;
-    background-color:darkgrey;
+.you {
+    border-radius: 1.5em .4em 1.5em 1.5em;
+    padding: .5em;
 }
 
-.ralign{
+.ralign {
     text-align: right;
 }
 
-.sticker{
-    height:15em;
-    border-radius:1.5em;
+.sticker {
+    height: 15em;
+    border-radius: 1.5em;
 }

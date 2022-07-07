@@ -2,175 +2,143 @@ var isProfilEmbed = 1;
 
 var contacts = [
     {
-        name: "justin",
-        unread: 10
+        name: "Justin"
+    },
+    {
+        name: "Kakak"
+    },
+    {
+        name: "Mama"
+    },
+    {
+        name: "Echo"
+    },
+    {
+        name: "Lala"
     }
 ]
 
-var chatArr = [
+var messageJustin = [
     {
-        name:"Justin",
-        messages:
-        [
-            {
-                by: 1,
-                type: 'txt',
-                value: 'P'
-            },
-            {
-                by: 0,
-                type: 'txt',
-                value: 'Whut?'
-            },
-            {
-                by:1,
-                type:'txt',
-                value:'Gk jadi'
-            },
-            {
-                by:0,
-                type:'sticker',
-                value:'4'
-            }
-        ]
+        by: 1,
+        type: 'txt',
+        value: 'P'
     },
     {
-        name:"Kakak",
-        messages:
-        [
-            {
-                by:0,
-                type:'txt',
-                value:'Test',
-            },
-            {
-                by:1,
-                type:'txt',
-                value:'masuk'
-            },
-            {
-                by:0,
-                type:'txt',
-                value:'Oke',
-            },
-            {
-                by:0,
-                type:'sticker',
-                value:'3'
-            }
-        ]
+        by: 0,
+        type: 'txt',
+        value: 'Whut?'
     },
     {
-        name:"Mama",
-        messages:
-        [
-            {
-                by:0,
-                type:'txt',
-                value:'Maaa'
-            },
-            {
-                by:1,
-                type:'txt',
-                value:'Apa ndy?'
-            },
-            {
-                by:0,
-                type:'txt',
-                value:'Air e mati'
-            },
-            {
-                by:0,
-                type:'txt',
-                value:'Ada bocor di Ranugrati'
-            },
-            {
-                by:1,
-                type:'txt',
-                value:'Minta o orang depan, mereka pake sumur bor'
-            }
-        ]
+        by: 1,
+        type: 'txt',
+        value: 'Gk jadi'
     },
     {
-        name:'Echo',
-        messages:
-        [
-            {
-                by:0,
-                type:'sticker',
-                value:'1'
-            },
-            {
-                by:0,
-                type:'url',
-                value:'https://www.w3schools.com/jsref/met_node_appendchild.asp'
-            },
-            {
-                by:0,
-                type:'txt',
-                value:'test123'
-            }
-        ]
+        by: 0,
+        type: 'sticker',
+        value: '4'
+    }];
+
+var messageKakak = [
+    {
+        by: 0,
+        type: 'txt',
+        value: 'Test',
     },
     {
-        name:'Lala',
-        messages:
-        [
-            {
-                by:1,
-                type:'txt',
-                value:'Weh'
-            },
-            {
-                by:1,
-                type:'txt',
-                value:'Sibuk a?'
-            },
-            {
-                by:0,
-                type:'txt',
-                value:'Hooh'
-            }
-        ]
+        by: 1,
+        type: 'txt',
+        value: 'masuk'
+    },
+    {
+        by: 0,
+        type: 'txt',
+        value: 'Oke',
+    },
+    {
+        by: 0,
+        type: 'sticker',
+        value: '3'
     }
 ]
 
-function showChat(num) {
+var messageMama = [
+    {
+        by: 0,
+        type: 'txt',
+        value: 'Maaa'
+    },
+    {
+        by: 1,
+        type: 'txt',
+        value: 'Apa ndy?'
+    },
+    {
+        by: 0,
+        type: 'txt',
+        value: 'Air e mati'
+    },
+    {
+        by: 0,
+        type: 'txt',
+        value: 'Ada bocor di Ranugrati'
+    },
+    {
+        by: 1,
+        type: 'txt',
+        value: 'Minta o orang depan, mereka pake sumur bor'
+    }
+]
+
+var messageEcho = [
+    {
+        by: 0,
+        type: 'sticker',
+        value: '1'
+    },
+    {
+        by: 0,
+        type: 'url',
+        value: 'https://www.w3schools.com/jsref/met_node_appendchild.asp'
+    },
+    {
+        by: 0,
+        type: 'txt',
+        value: 'test123'
+    }
+]
+
+var messageLala = [
+    {
+        by: 1,
+        type: 'txt',
+        value: 'Weh'
+    },
+    {
+        by: 1,
+        type: 'txt',
+        value: 'Sibuk a?'
+    },
+    {
+        by: 0,
+        type: 'txt',
+        value: 'Hooh'
+    }
+]
+
+
+
+function showChat(name) {
     const chatArea = document.getElementById("chat");
     chatArea.innerHTML = '';
     var isProfilEmbed = 1;
-    document.getElementById("chatterid").innerHTML = chatArr[num][0];
-    var chatLen = chatArr[num].length - 1;
-    for (a = 1; a <= chatLen; a++) {
-        if (chatArr[num][a][1] === 1) {// is sticker
-            if (chatArr[num][a][0] === 0) {
-                printChat("sticker", "you", chatArr[num][a][2])
-            }
-            else {
-                printChat("sticker", num, chatArr[num][a][2])
-            }
-        }
-        else if (chatArr[num][a][1] === 2) {// is url
-            if (chatArr[num][a][0] === 0) {
-                printChat("url", "you", chatArr[num][a][2])
-            }
-            else {
-                printChat("url", num, chatArr[num][a][2])
-            }
+    document.getElementById("chatterid").innerHTML = name;
+    eval("message" + name + ".map(({value, type, by})=>printChat(by,type,value,name));")
 
-        }
-        else {// is normal message
-            if (chatArr[num][a][0] === 0) {
-                printChat("normal", "you", chatArr[num][a][1])
-            }
-            else {
-                printChat("normal", num, chatArr[num][a][1])
-            }
-        }
-    }
 }
 
-function printChat(mode, who, message) {
+function printChat(who, mode, message, name) {
     const chatArea = document.getElementById("chat");
     const parent = document.createElement("div");
 
@@ -178,21 +146,21 @@ function printChat(mode, who, message) {
 
     const messageText = document.createTextNode(message);
 
-    if (who === "you") {
+    if (who === 0) {
         parent.setAttribute('class', 'chat ralign')
-        span.setAttribute('class', 'you')
+        span.setAttribute('class', 'bg-dark you')
         isProfilEmbed = 1;
         decideMode()
     }
     else {
-        span.setAttribute('class', 'they');
+        span.setAttribute('class', 'bg-light they');
         isProfilEmbedded()
     }
 
     function isProfilEmbedded() {
         if (isProfilEmbed === 1) {
             const profilepict = document.createElement("img");
-            profilepict.src = "assets/images/icons/" + chatArr[who][0] + ".jpg";
+            profilepict.src = "assets/images/icons/" + name + ".jpg";
             profilepict.setAttribute('class', 'chatprofimg');
 
             parent.appendChild(profilepict);
@@ -207,17 +175,17 @@ function printChat(mode, who, message) {
     }
 
     function decideMode() {
-        if (mode === "normal") {
+        if (mode === 'txt') {
             span.appendChild(messageText);
             parent.appendChild(span);
         }
-        else if (mode === "sticker") { // is sticker
+        else if (mode === 'sticker') { // is sticker
             const sticker = document.createElement("img");
             sticker.src = "assets/images/stickers/" + message + ".webp"
             sticker.setAttribute('class', 'sticker');
             parent.appendChild(sticker);
         }
-        else if (mode === "url") { // is url
+        else if (mode === 'url') { // is url
             const anchor = document.createElement("a");
             const anchorUrl = document.createTextNode(message)
             anchor.href = message;
@@ -230,32 +198,20 @@ function printChat(mode, who, message) {
 }
 
 function listAllChat() {
-    let len = names.length - 1;
-    for (a = 0; a <= len; a++) {
-        summonChat(names[a], a)
-    }
+    contacts.map(({ name }) => summonChat(name));
 }
 
-function summonChat(name, numOnNames) {
+function summonChat(name) {
+    eval("var lastChatN = message" + name + ".length - 1")
+    eval("message" + name + ".map(({value, type, by},i)=> if(i === lastChatN){};")
 
-    var lastChat;
-    var chatLen = chatArr[numOnNames].length - 1
-
-    if (chatLen === 1) {
-        lastChat = "Sticker";
-        createList(lastChat)
-    }
-    else {
-        lastChat = chatArr[numOnNames][chatLen][1];
-        createList(lastChat)
-    }
     function createList(lastChat) {
         console.log(name + " " + chatLen + " " + lastChat)
 
         // Create parent
         const lists = document.createElement("div");
         lists.setAttribute('class', 'profile chats');
-        lists.setAttribute('onclick', 'showChat(' + numOnNames + ')')
+        lists.setAttribute('onclick', 'showChat("' + name + '")')
 
         // Create PP
         const chatpp = document.createElement("img");
@@ -295,6 +251,5 @@ function summonChat(name, numOnNames) {
         document.getElementById("list").appendChild(lists);
     }
 }
-
 
 listAllChat();
