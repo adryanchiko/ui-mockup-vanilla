@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 :root {
     --accent100: hsl(0, 0%, 90%);
     --accent200: hsl(0, 0%, 60%);
     --accent300: hsl(0, 1%, 30%);
     --alpha: #00000000;
+}
+
+html body{
+    font-family: 'Ubuntu', sans-serif;
 }
 
 a {
