@@ -11,65 +11,9 @@
 
 <body>
     <div id="separator">
-        <div id="sidepane">
-            <div class="profile light">
-                <img src="assets/images/icons/You.jpg" alt="your-photo">
-                <span class="profile-text">Hiyorrun</span>
-                <span class="void"></span>
-                <span class="clickable mobile-btn material-symbols-rounded">
-                    web_stories
-                </span>
-                <span class="clickable mobile-btn material-symbols-rounded">
-                    chat
-                </span>
-                <span class="clickable mobile-btn material-symbols-rounded">
-                    more_vert
-                </span>
-            </div>
-            <div id="search-area">
-                <div class="input-container bg-light">
-                    <input type="text" class="input-area alpha" placeholder="Search or start a new chat.">
-                </div>
-            </div>
-            <div id="chatlist">
-                <div id="list-area">
-                    <ol id="list" class="list">
-                    </ol>
-                </div>
-            </div>
+        <div id="sidepane" w3-include-html="assets/subpages/sidepane.html">
         </div>
-        <div id="main-area">
-            <div class="profile bg-white light">
-                <span onclick="moBack()" id="moBack" class="clickable mobile-btn material-symbols-rounded ">
-                    arrow_back
-                </span>
-                <span id="chatterid" class="profile-text"></span>
-                <span class="void"></span>
-                <span class="clickable mobile-btn material-symbols-rounded">
-                    search
-                </span>
-                <span class="clickable mobile-btn material-symbols-rounded">
-                    more_vert
-                </span>
-            </div>
-            <div id="chat-area" class="bg-white">
-                <ol id="chat" class="list">
-                </ol>
-            </div>
-            <div id="input-parent">
-                <div class="input-container bg-light">
-                    <input type="text" class="input-area alpha" placeholder="Type a message">
-                    <button class="clickable input-area-btn bg-white"><span class="material-symbols-rounded">
-                            mood
-                        </span></button>
-                    <button class="clickable input-area-btn bg-white"><span class="material-symbols-rounded">
-                            attach_file
-                        </span></button>
-                    <button class="clickable input-area-btn bg-white"><span class="material-symbols-rounded">
-                            mic
-                        </span></button>
-                </div>
-            </div>
+        <div id="main-area" w3-include-html="assets/subpages/chat-area.html">
         </div>
     </div>
     <script src="assets/scripts/scripts.js"></script>
